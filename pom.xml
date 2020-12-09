@@ -9,5 +9,6 @@
   	<module>week5</module>
   	<module>ParkingSystem</module>
   	<module>week5parksystem</module>
+  	<module>java-oop</module>
   </modules>
 </project>

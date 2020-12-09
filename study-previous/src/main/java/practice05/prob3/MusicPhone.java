@@ -1,10 +1,10 @@
-package prob3;
+package practice05.prob3;
 
 public class MusicPhone extends Phone {
 	
 	@Override
 	public void execute ( String function ) {
-		if (function.equals("À½¾Ç") ) {
+		if (function.equals("ìŒì•…") ) {
 			playMusic();
 			return;
 		}
@@ -13,6 +13,6 @@ public class MusicPhone extends Phone {
 	}
 
 	private void playMusic(){
-		System.out.println("MP3 ÇÃ·¹ÀÌ¾î¿¡¼­ À½¾ÇÀç»ı");
+		System.out.println("MP3 í”Œë ˆì´ì–´ì—ì„œ ìŒì•…ì¬ìƒ");
 	}
 }

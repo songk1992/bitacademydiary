@@ -1,7 +1,7 @@
-package practice02;
+package practice02.prob6;
 
-public class Add implements Calc {
-
+public class Sub implements Calc {
+	
 	int a;
 	int b;
 	
@@ -14,7 +14,7 @@ public class Add implements Calc {
 
 	@Override
 	public int calculate() {
-		return a+b;
+		return a-b;
 	}
 
 }

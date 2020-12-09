@@ -1,5 +1,7 @@
 package practice02;
 
+import practice02.prob6.Calc;
+
 public class Mul implements Calc {
 
 	int a;

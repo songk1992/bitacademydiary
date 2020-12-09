@@ -1,21 +1,21 @@
 package prob4;
 
 public class Dropship {
-	int x, y; // ÇöÀç À§Ä¡
+	int x, y; // í˜„ìž¬ ìœ„ì¹˜
 	
 	void move(int x, int y) {
-		/* ÁöÁ¤µÈ À§Ä¡·Î ÀÌµ¿ */ 
+		/* ì§€ì •ëœ ìœ„ì¹˜ë¡œ ì´ë™ */ 
 	}
 	
 	void stop() {
-		/* ÇöÀç À§Ä¡¿¡ Á¤Áö */ 
+		/* í˜„ìž¬ ìœ„ì¹˜ì— ì •ì§€ */ 
 	}
 	
 	void load() {
-		/* ¼±ÅÃµÈ ´ë»óÀ» ÅÂ¿î´Ù.*/ 
+		/* ì„ íƒëœ ëŒ€ìƒì„ íƒœìš´ë‹¤.*/ 
 	}
 	
 	void unload() {
-		/* ¼±ÅÃµÈ ´ë»óÀ» ³»¸°´Ù.*/ 
+		/* ì„ íƒëœ ëŒ€ìƒì„ ë‚´ë¦°ë‹¤.*/ 
 	}
 }

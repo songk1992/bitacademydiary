@@ -1,4 +1,4 @@
-package prob3;
+package practice05.prob3;
 
 public class PhoneApp {
 
@@ -6,9 +6,9 @@ public class PhoneApp {
 
 		Phone phone = new SmartPhone();
 
-		phone.execute("À½¾Ç");
-		phone.execute("ÅëÈ­");
-		phone.execute("¾Û");
+		phone.execute("ìŒì•…");
+		phone.execute("í†µí™”");
+		phone.execute("ì•±");
 
 	}
 }

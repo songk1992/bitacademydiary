@@ -1,15 +1,16 @@
-package prob5;
+package practice05.prob5;
 
 public class TestAccount {
 	public static void main(String[] args) {
 
+
 		Account account = new Account("078-3762-293");
 		
-		System.out.print( account.getAccNo() + "°èÁÂÀÇ ÀÜ°í´Â " + account.getBalance() + "¸¸¿ø ÀÔ´Ï´Ù." );
+		System.out.print( account.getAccNo() + "ê³„ì¢Œì˜ ì”ê³ ëŠ” " + account.getBalance() + "ë§Œì› ì…ë‹ˆë‹¤." );
 		account.save(100);
-		System.out.print( account.getAccNo() + "°èÁÂÀÇ ÀÜ°í´Â " + account.getBalance() + "¸¸¿ø ÀÔ´Ï´Ù." );
+		System.out.print( account.getAccNo() + "ê³„ì¢Œì˜ ì”ê³ ëŠ” " + account.getBalance() + "ë§Œì› ì…ë‹ˆë‹¤." );
 		account.deposit(30);
-		System.out.print( account.getAccNo() + "°èÁÂÀÇ ÀÜ°í´Â " + account.getBalance() + "¸¸¿ø ÀÔ´Ï´Ù." );
+		System.out.print( account.getAccNo() + "ê³„ì¢Œì˜ ì”ê³ ëŠ” " + account.getBalance() + "ë§Œì› ì…ë‹ˆë‹¤." );
 	}
 
 }

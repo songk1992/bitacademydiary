@@ -1,4 +1,4 @@
-package practice01;
+package practice02;
 
 public class P2Q4 {
     public static void main(String[] args) {

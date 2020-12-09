@@ -1,4 +1,4 @@
-package prob3;
+package practice05.prob3;
 
 public class Phone {
 	
@@ -7,7 +7,7 @@ public class Phone {
 	}
 	
 	private void call(){
-		System.out.println("ÅëÈ­±â´É½ÃÀÛ");
+		System.out.println("í†µí™”ê¸°ëŠ¥ì‹œì‘");
 	}
 
 }

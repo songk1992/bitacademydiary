@@ -1,4 +1,4 @@
-package practice02;
+package practice02.prob6;
 
 public class Div implements Calc {
 

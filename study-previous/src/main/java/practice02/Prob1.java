@@ -2,7 +2,7 @@ package practice02;
 
 import java.util.Scanner;
 
-public class P2Q2 {
+public class Prob1 {
 	    public static void main(String[] args) {
 	        Scanner in = new Scanner( System.in );
 	        int intArray[] = new int[5];

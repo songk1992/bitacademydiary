@@ -1,16 +1,35 @@
-package prob1;
-
+package practice04.prob1;
 import java.util.Scanner;
 
 public class Prob1 {
 
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner( System.in );
-		System.out.print( "¼ıÀÚ¸¦ ÀÔ·ÂÇÏ¼¼¿ä :" );
+			System.out.print( "ìˆ«ìë¥¼ ì…ë ¥í•˜ì„¸ìš”. :" );
+			int inputNumber = scanner.nextInt();
+			int sum = 0;
+			int modifier = 0;
+			
+			if(isOdd(inputNumber)) {
+				modifier++;
+			}
+			
+			for(int i = modifier; i<=inputNumber;i+=2) {
+				sum += i;
+			}
+			
+			System.out.print( sum );
 		
-		int inputNumber = scanner.nextInt();
-
-		/* ÄÚµå¸¦ Ãß°¡ÇÕ´Ï´Ù */
+		scanner.close();
 	}
+
+	private static boolean isOdd(int inputNumber) {
+		if(inputNumber%2 == 1) {
+			return true;
+		}else
+		return false;
+	}
+	
+
 
 }

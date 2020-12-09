@@ -1,23 +1,52 @@
-package prob2;
+
+package practice04.prob2;
 
 public class Money {
-	int amount;
-    public Money(int amount) {
-        this.amount = amount;
-    }
-    public Money add(Money money) {
-        //´õÇÏ±â ±¸Çö
-    }
-    public Money minus(Money money) {
-        //»©±â ±¸Çö
-    }
-    public Money multiply(Money money) {
-        //°öÇÏ±â ±¸Çö
-    }
-    public Money devide(Money money) {
-        //³ª´©±â ±¸Çö
-    } 
-    public boolean equals(Object object) {
-        //Object equals ¸Þ½îµå ÀçÁ¤ÀÇ
-    }
+	int amount;  // immutable(ë¶ˆë³€)
+
+	public Money(int amount) {
+		this.amount = amount;
+	}
+
+	public Money add(Money money) {
+		return (new Money(amount + money.amount));
+	}
+
+	public Money minus(Money money) {
+		return (new Money(amount - money.amount));
+	}
+
+	public Money multiply(Money money) {
+		return (new Money(amount * money.amount));
+	}
+
+	public Money devide(Money money) {
+		return (new Money(amount / money.amount));
+	}
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + amount;
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Money other = (Money) obj;
+		if (amount != other.amount)
+			return false;
+		return true;
+	}
+	
+	
+	
+	
 }

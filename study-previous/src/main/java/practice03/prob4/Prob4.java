@@ -9,11 +9,23 @@ public class Prob4 {
         int intArray[] = new int[5];
         double sum = 0;
 
-        /* Ű���忡�� �迭 ũ�⸸ŭ �Է� �޾� �迭�� �����ϴ� �ڵ� */
+        /* 키보드에서 배열 크기만큼 입력 받아 배열에 정장하는 코드 */
+        for(int i=0; i<intArray.length; i++) {
+        	intArray[i] = in.nextInt();
+            /* 배열에 저장된 정수 값 더하기 */
+        	sum += intArray[i];
+        }
 
-        /* �迭�� ����� ���� �� ���ϱ� */
-
-        /* ��� */
+        
+        /* 출력 */
+        for(int i=0; i<intArray.length; i++) {
+        	
+        }
+        
+        System.out.println(sum);
+        
+        
+        in.close();
 	}
 
 }

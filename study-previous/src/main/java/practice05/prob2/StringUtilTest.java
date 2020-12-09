@@ -1,4 +1,6 @@
-package practice02;
+package practice05.prob2;
+
+import practice03.prob1.StringUtil;
 
 public class StringUtilTest {
     public static void main(String args[])  {         

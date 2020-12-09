@@ -3,8 +3,6 @@ package practice02.prob6;
 import java.util.*;
 import java.util.Scanner;
 
-import practice02.Mul;
-
 public class CalcApp {
 
 	public static void main(String[] args) throws Exception {

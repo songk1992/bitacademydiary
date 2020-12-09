@@ -1,4 +1,4 @@
-package practice02;
+package practice02.prob4;
 
 public class CurrencyConverter {
 

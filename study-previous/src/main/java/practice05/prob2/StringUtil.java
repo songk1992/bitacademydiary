@@ -1,14 +1,20 @@
-package prob2;
+package practice05.prob2;
 
 public class StringUtil {
     public static String concatenate( String[] str ){
-        //¹®ÀÚ¿­À» °áÇÕÇÏ¿© ¸®ÅÏÇÏ´Â ¸Þ¼Òµå ±¸Çö
+    	
+    	String returnStr = "";
+    	
+    	for(int i=0;i<str.length;i++) {
+    		returnStr += str[i];
+    	}
+
+		return returnStr;
     }
 
     public static void main(String args[])  {         
         String[] strArr = {"SuperMan", "BatMan", "SpiderMan"}; 
         String resultStr = concatenate( strArr );
-        System.out.println( "°á°ú ¹®ÀÚ¿­ : " + resultStr ); 
+        System.out.println( "ê²°ê³¼ ë¬¸ìžì—´ : " + resultStr ); 
     }
 }
-

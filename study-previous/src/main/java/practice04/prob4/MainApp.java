@@ -1,13 +1,15 @@
-package prob4;
+package practice04.prob4;
+
+import java.util.Stack;
 
 public class MainApp {
 	public static void main(String[] args) {
 		try {
-			Stack stack = new MyStack(-1);
+			Stack stack = new Stack();
 
 			System.out.println("======================================");
 
-			Stack stack = new MyStack(3);
+			stack = new Stack();
 			stack.push("Hello");
 			stack.push("World");
 			stack.push("!!!");
@@ -20,7 +22,7 @@ public class MainApp {
 
 			System.out.println("======================================");
 
-			stack = new MyStack(3);
+			stack = new Stack();
 			stack.push("Hello");
 
 			System.out.println(stack.pop());

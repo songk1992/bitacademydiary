@@ -15,13 +15,53 @@ public class Book {
 	
 	
 	public void rent() {
-		System.out.println("_______이(가) 대여 됐습니다.");
+		this.stateCode = 0;
+		System.out.println( title + " 이(가) 대여 됐습니다.");
 	}
 	
 	public void print() {
 		
+		System.out.print( "책 제목 :" + title );
+		System.out.print( ", 장르:" + genre );
+		System.out.print( ", 대여 유무:");
+		if(stateCode==1) {
+			System.out.println("재고있음");
+		}
+		else {
+			System.out.println("재고없음");
+		}
 	}
-	
+
+
+	public int getBookNum() {
+		return bookNum;
+	}
+
+
+	public void setBookNum(int bookNum) {
+		this.bookNum = bookNum;
+	}
+
+
+	public String getTitle() {
+		return title;
+	}
+
+
+	public void setTitle(String title) {
+		this.title = title;
+	}
+
+
+	public String getGenre() {
+		return genre;
+	}
+
+
+	public void setGenre(String genre) {
+		this.genre = genre;
+	}
+
 	
 
 

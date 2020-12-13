@@ -11,5 +11,6 @@
   	<module>week5parksystem</module>
   	<module>java-oop</module>
   	<module>week5_io</module>
+  	<module>java-networking</module>
   </modules>
 </project>

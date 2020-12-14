@@ -61,7 +61,9 @@ public class TCPServer {
 				System.out.print("[server] error " + e);
 			}finally {
 				try {
-					socket.close();
+					if( serverSocket != null && !serverSocket.isClosed() ) {
+						socket.close();
+					}
 				}catch (IOException e) {
 					e.printStackTrace();
 				}
@@ -72,7 +74,7 @@ public class TCPServer {
 		}catch (IOException e) {
 			e.printStackTrace();
 		}finally {
-			if( serverSocket != null && serverSocket.isClosed() == false ) {
+			if( serverSocket != null && !serverSocket.isClosed() ) {
 				try {
 					serverSocket.close();
 				}catch( IOException ex ) {

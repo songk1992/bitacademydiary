@@ -1,6 +1,5 @@
 package echo;
 
-
 import java.io.IOException;
 import java.net.InetSocketAddress;
 import java.net.ServerSocket;
@@ -21,11 +20,8 @@ public class EchoServer {
 			//3. accept
 			while(true) {
 				Socket socket = serverSocket.accept();
-				
 				new EchoServerReceiveThread(socket).start();
 			}
-			
-			
 		} catch (IOException e) {
 			System.out.println("[server] error:" + e);
 		} finally {

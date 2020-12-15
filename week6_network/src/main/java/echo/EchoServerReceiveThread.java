@@ -11,7 +11,6 @@ import java.net.Socket;
 import java.net.SocketException;
 
 public class EchoServerReceiveThread extends Thread {
-
 	private Socket socket;
 	
 	public EchoServerReceiveThread(Socket socket) {
@@ -28,12 +27,12 @@ public class EchoServerReceiveThread extends Thread {
 		System.out.println("[server] connected by client[" + remoteHostAddress + ":" + remotePort + "]");
 		
 		try {
-			//4. IOStream 생성(받아오기)
+			//1. IOStream 생성(받아오기)
 			BufferedReader br = new BufferedReader(new InputStreamReader(socket.getInputStream(), "UTF-8"));
 			PrintWriter pw = new PrintWriter(new OutputStreamWriter(socket.getOutputStream(), "UTF-8"), true);
 			
 			while(true) {
-				//5. 데이터 읽기
+				//2. 데이터 읽기
 				String data = br.readLine();
 				
 				if(data == null){
@@ -44,7 +43,7 @@ public class EchoServerReceiveThread extends Thread {
 				
 				System.out.println("[server] received:" + data);
 				
-				//6. 데이터쓰기
+				//3. 데이터쓰기
 				pw.println(data);
 			}
 		} catch(SocketException e) {
@@ -62,7 +61,4 @@ public class EchoServerReceiveThread extends Thread {
 			}
 		}
 	}
-	
-	
-
 }

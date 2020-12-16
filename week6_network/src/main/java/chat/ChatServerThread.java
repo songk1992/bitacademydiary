@@ -23,7 +23,6 @@ public class ChatServerThread extends Thread {
 	List<Writer> listWriters;
 	PrintWriter pw;
 
-
 	public ChatServerThread(Socket socket, List<Writer> listWriters) {
 		this.socket = socket;
 		this.listWriters = listWriters;
@@ -74,6 +73,8 @@ public class ChatServerThread extends Thread {
 				} else if ("quit".equals(tokens[0]) || "QUIT".equals(tokens[0])) {
 					doQuit();
 					break;
+				} else if ("whisper".equals(tokens[0]) || "WHISPER".equals(tokens[0])) {
+					doWhisper(data);
 				} else {
 					System.out.println("에러 : 알수 없는 요청(" + tokens[0] + ")\n\r");
 				}
@@ -97,25 +98,25 @@ public class ChatServerThread extends Thread {
 	}
 
 	private void doQuit() {
-		
+
 		listWriters.remove(pw);
-		
+
 		doQuit(pw);
 	}
-	
+
 	private void doQuit(Writer writer) {
 		synchronized (listWriters) {
 			removeWriter(writer);
 		}
-		
+
 		String data = nickname + "님이 퇴장 하였습니다.";
-		broadcast (data);
+		broadcast(data);
 	}
 
 	private void removeWriter(Writer writer) {
 		for (int i = 0; i < listWriters.size(); i++) {
 			Writer writer2 = listWriters.get(i);
-			if(writer.equals(writer2.toString())) {
+			if (writer.equals(writer2.toString())) {
 				listWriters.remove(i);
 			}
 		}
@@ -123,21 +124,37 @@ public class ChatServerThread extends Thread {
 
 	private void doMessage(String string) {
 		String data = nickname + ":" + string;
-		broadcast( data );
+		broadcast(data);
+	}
+
+	private void doWhisper(String string) {
+		String[] tokens = string.split(":");
+		String data = nickname + ":" + tokens[2];
+
+		synchronized (listWriters) {
+			for (Writer writer : listWriters) {
+				if (writer.equals(tokens[0])) {
+					PrintWriter printWriter = (PrintWriter) writer;
+					printWriter.println(data);
+					System.out.println("[server] whispered: " + data);
+					printWriter.flush();
+				}
+			}
+		}
 
 	}
 
 	private void doJoin(String nickName, PrintWriter pw) {
 		this.nickname = nickName;
-		
+
 		String data = nickName + "님이 참여 하였습니다";
-		broadcast( data );
-		
+		broadcast(data);
+
 		/* writer pool에 저장 */
 		addWriter(pw);
-		
+
 		//
-		System.out.println( "[server] join: ok \n\r" );
+		System.out.println("[server] join: ok \n\r");
 		pw.flush();
 	}
 
@@ -158,13 +175,10 @@ public class ChatServerThread extends Thread {
 			for (Writer writer : listWriters) {
 				PrintWriter printWriter = (PrintWriter) writer;
 				printWriter.println(data);
-				System.out.println( "[server] broadcasted: " + data);
+				System.out.println("[server] broadcasted: " + data);
 				printWriter.flush();
 			}
 		}
 	}
-	
-	
-	
 
 }

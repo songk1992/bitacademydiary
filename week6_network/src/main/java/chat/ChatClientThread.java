@@ -4,10 +4,13 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.net.Socket;
 
+import chat.client.win.ChatWindow;
+
 public class ChatClientThread extends Thread {
 
 	Socket socket;
 	BufferedReader br;
+	String data;
 
 	public ChatClientThread(Socket socket, BufferedReader br) {
 		this.socket = socket;
@@ -16,9 +19,7 @@ public class ChatClientThread extends Thread {
 
 	@Override
 	public void run() {
-		String data;
-			// 7. 읽기
-			
+
 		while(true) {
 			try {
 				data = br.readLine();
@@ -28,14 +29,23 @@ public class ChatClientThread extends Thread {
 					return;
 				}
 				System.out.println( data );
+				
+				ChatWindow.AddStringToTextArea(data);
 
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		}
-
-
 	}
+
+	public String getData() {
+		return data;
+	}
+
+	public void setData(String data) {
+		this.data = data;
+	}
+
 
 }

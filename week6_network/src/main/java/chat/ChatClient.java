@@ -24,7 +24,6 @@ public class ChatClient {
 			//2. 소켓 생성
 			socket = new Socket();
 			
-			
 			//3. 서버 연결
 			socket.connect(new InetSocketAddress(SERVER_IP, ChatServer.PORT));
 			System.out.println("[client] connected!");
@@ -33,18 +32,19 @@ public class ChatClient {
 			BufferedReader br = new BufferedReader(new InputStreamReader(socket.getInputStream(), "UTF-8"));
 			PrintWriter pw = new PrintWriter(new OutputStreamWriter(socket.getOutputStream(), "UTF-8"), true);
 			
+			// Thread 시작
+			new ChatClientThread(socket, br).start();
 			
+			
+			//5. 키보드 입력 받기 
 			int numberOfComments = 0;
-			
 			while(true) {
-
-				new ChatClientThread(socket, br).start();
 				
 		
 				String line;
 				boolean pw_on = true;
 				
-				//5. 키보드 입력 받기
+				
 				if(numberOfComments == 0) {
 					System.out.print("닉네임을 입력해주세요 : ");
 					line = "join:" + scanner.nextLine();

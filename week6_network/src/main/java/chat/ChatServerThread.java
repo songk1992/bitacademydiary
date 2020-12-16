@@ -104,15 +104,21 @@ public class ChatServerThread extends Thread {
 	}
 	
 	private void doQuit(Writer writer) {
-		removeWriter(writer);
+		synchronized (listWriters) {
+			removeWriter(writer);
+		}
 		
 		String data = nickname + "님이 퇴장 하였습니다.";
 		broadcast (data);
 	}
 
 	private void removeWriter(Writer writer) {
-		
-		
+		for (int i = 0; i < listWriters.size(); i++) {
+			Writer writer2 = listWriters.get(i);
+			if(writer.equals(writer2.toString())) {
+				listWriters.remove(i);
+			}
+		}
 	}
 
 	private void doMessage(String string) {

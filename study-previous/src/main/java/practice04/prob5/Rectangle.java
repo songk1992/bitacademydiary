@@ -23,7 +23,6 @@ public class Rectangle extends Shape implements Resizable{
 		return (width + height) * 2;
 	}
 
-	@Override
 	public void resize(double s) {
 		width *= s;
 		height *= s;
